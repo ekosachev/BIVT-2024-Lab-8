@@ -1,6 +1,6 @@
-namespace Purple_4
+namespace Lab_8
 {
-    public class Purple_4 : Purple.Purple
+    public class Purple_4 : Purple
     {
         public string Output { get; private set; }
 
@@ -8,7 +8,7 @@ namespace Purple_4
 
         public Purple_4(string input, (string, char)[] codes) : base(input)
         {
-            Output = "";
+            Output = default;
             Codes = codes;
         }
 

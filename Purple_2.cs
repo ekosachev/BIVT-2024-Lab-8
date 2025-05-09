@@ -1,13 +1,13 @@
-namespace Purple_2
+namespace Lab_8
 {
-    public class Purple_2 : Purple.Purple
+    public class Purple_2 : Purple
     {
         public string[] Output { get; private set; }
 
         public Purple_2(string input)
             : base(input)
         {
-            this.Output = new string[0];
+            this.Output = default;
         }
 
         public override void Review()
@@ -25,7 +25,7 @@ namespace Purple_2
                 {
                     int amountOfSpaces = line.Length - 1;
                     int spaceToFill = 50 - line.Select(w => w.Length).Sum();
-                    int stdSpaceLength = spaceToFill / amountOfSpaces;
+                    int stdSpaceLength = amountOfSpaces != 0 ? spaceToFill / amountOfSpaces : 0;
                     int amountOfLongerSpaces = spaceToFill - stdSpaceLength * amountOfSpaces;
                     string lineString = "";
                     for (int index = 0; index < line.Length; index++)
@@ -45,7 +45,7 @@ namespace Purple_2
                             lineString += ' ';
                         }
                     }
-                    Console.WriteLine($"amount of spaces: {amountOfSpaces}; spaceToFill: {spaceToFill}; stdSpaceLength: {stdSpaceLength}; amountOfLongerSpaces: {amountOfLongerSpaces}");
+                    // Console.WriteLine($"amount of spaces: {amountOfSpaces}; spaceToFill: {spaceToFill}; stdSpaceLength: {stdSpaceLength}; amountOfLongerSpaces: {amountOfLongerSpaces}");
                     this.Output = this.Output.Append(lineString).ToArray();
                     line = [];
                 }
@@ -79,7 +79,7 @@ namespace Purple_2
                                     lineString += ' ';
                                 }
                             }
-                            Console.WriteLine($"amount of spaces: {amountOfSpaces}; spaceToFill: {spaceToFill}; stdSpaceLength: {stdSpaceLength}; amountOfLongerSpaces: {amountOfLongerSpaces}");
+                            // Console.WriteLine($"amount of spaces: {amountOfSpaces}; spaceToFill: {spaceToFill}; stdSpaceLength: {stdSpaceLength}; amountOfLongerSpaces: {amountOfLongerSpaces}");
                             this.Output = this.Output.Append(lineString).ToArray();
                         }
                         break;
@@ -90,7 +90,7 @@ namespace Purple_2
 
         public override string ToString()
         {
-            return string.Join('\n', this.Output);
+            return string.Join(System.Environment.NewLine, this.Output);
         }
     }
 }

@@ -1,15 +1,15 @@
 using System.Text;
 
-namespace Purple_3
+namespace Lab_8
 {
-    public class Purple_3 : Purple.Purple
+    public class Purple_3 : Purple
     {
         public (string, char)[] Codes { get; private set; }
         public string Output { get; private set; }
 
         public Purple_3(string input) : base(input)
         {
-            Output = "";
+            Output = default;
             Codes = new (string, char)[0];
         }
 

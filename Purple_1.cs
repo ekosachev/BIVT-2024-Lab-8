@@ -1,6 +1,6 @@
-namespace Purple_1
+namespace Lab_8
 {
-    public class Purple_1 : Purple.Purple
+    public class Purple_1 : Purple
     {
         public string Output { get; private set; }
         private static char[] SEPARATORS =
@@ -26,7 +26,7 @@ namespace Purple_1
         public Purple_1(string input)
             : base(input)
         {
-            this.Output = "";
+            this.Output = default;
         }
 
         public override void Review()

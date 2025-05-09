@@ -1,4 +1,4 @@
-namespace Purple
+namespace Lab_8
 {
     public abstract class Purple
     {
