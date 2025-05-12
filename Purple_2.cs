@@ -80,6 +80,7 @@ namespace Lab_8
                                 }
                             }
                             // Console.WriteLine($"amount of spaces: {amountOfSpaces}; spaceToFill: {spaceToFill}; stdSpaceLength: {stdSpaceLength}; amountOfLongerSpaces: {amountOfLongerSpaces}");
+                            if (this.Output == null) this.Output = new string[0];
                             this.Output = this.Output.Append(lineString).ToArray();
                         }
                         break;
